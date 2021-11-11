@@ -27,8 +27,7 @@ public class CustomerManager {
 
     @PersistenceContext(unitName = "customerPresistUnit")
     private EntityManager em;
-    @Resource
-    private javax.transaction.UserTransaction utx;
+
     
 
     // Add business logic below. (Right-click in editor and choose
