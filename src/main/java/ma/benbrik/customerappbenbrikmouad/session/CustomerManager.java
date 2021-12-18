@@ -6,7 +6,6 @@
 package ma.benbrik.customerappbenbrikmouad.session;
 
 import java.util.List;
-import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,9 +16,8 @@ import ma.benbrik.customerappbenbrikmouad.entities.Customer;
  *
  * @author benbrik_mouad
  * <p>
- * For this specific implementation of the interface, you're better off
- * calling the more efficient {@link foo} method, provided you have the
- * additional arguments!
+ * this class persist customer data using EntityManager class where
+ * PersistenceContext name is customerPresistUnit
  * </p>
  */
 @Stateless
@@ -44,5 +42,8 @@ public class CustomerManager {
 
     public void persist(Object object) {
             em.persist(object);
+    }
+    public Customer getCustomer(int idCustomer) {  
+        return em.find(Customer.class, idCustomer);  
     }
 }
